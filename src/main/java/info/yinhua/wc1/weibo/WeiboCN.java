@@ -1,4 +1,4 @@
-package info.yinhua.wc1;
+package info.yinhua.wc1.weibo;
 
 import cn.edu.hfut.dmic.webcollector.net.HttpRequest;
 import cn.edu.hfut.dmic.webcollector.net.HttpResponse;
