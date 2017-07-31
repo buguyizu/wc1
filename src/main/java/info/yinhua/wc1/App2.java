@@ -20,15 +20,11 @@ public class App2
 {
 	public static void main(String[] args) {
 		// 设置 chrome 的路径
-		System.setProperty(
-				"webdriver.chrome.driver",
-				"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");
+		System.setProperty("webdriver.chrome.driver", Const.chrome);
 		// 创建一个 ChromeDriver 的接口，用于连接 Chrome
 		@SuppressWarnings("deprecation")
 		ChromeDriverService service = new ChromeDriverService.Builder()
-				.usingDriverExecutable(
-						new File(
-								"D:\\lac_chen\\chromedriver.exe"))
+				.usingDriverExecutable(new File(Const.chromedriver))
 				.usingAnyFreePort().build();
 		try {
 			service.start();
