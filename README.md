@@ -20,3 +20,6 @@ sprider
 [学习Berkeley DB- 入门](http://www.cnblogs.com/me115/p/3324040.html)  
 [BerkeleyDB 多索引查询](http://www.cnblogs.com/me115/p/3326013.html)  
 [C++开发的论坛系统 - BBS](http://blog.csdn.net/tiplip/article/details/10980397)  
+
+##### thumbnailator
+ 0. thumbnailator test
