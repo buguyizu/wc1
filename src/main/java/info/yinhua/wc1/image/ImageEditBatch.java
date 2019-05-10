@@ -33,20 +33,60 @@ public class ImageEditBatch {
 	static String OUTPUT = BASE + "\\output\\";
 	static String FORMAT = "png";
 	static String SUFFIX = "-thumbnail";
-	
+
+	static String WATERMARK_FILE = ".\\img\\w\\HTB1Ke.png";
+	static String WATERMARK_OUTPUT = BASE + "\\wm\\";
+
 	Logger log = LoggerFactory.getLogger(ImageEditBatch.class);
 
 	public static void main(String[] arg) {
+		// 1.square
+//		File outputFile = new File(OUTPUT);
+//
+//		if (outputFile.exists())
+//			for (File f : outputFile.listFiles())
+//				f.delete();
+//		else
+//			outputFile.mkdir();
+//
+//		new ImageEditBatch().square(BASE);
 
-		File outputFile = new File(OUTPUT);
+		// 2.watermark
+		File outputFile2 = new File(WATERMARK_OUTPUT);
 
-		if (outputFile.exists())
-			for (File f : outputFile.listFiles())
+		if (outputFile2.exists())
+			for (File f : outputFile2.listFiles())
 				f.delete();
 		else
-			outputFile.mkdir();
+			outputFile2.mkdir();
 
-		new ImageEditBatch().square(BASE);
+		new ImageEditBatch().watermark(BASE);
+	}
+	
+	// 加水印
+	public void watermark(String path) {
+
+		try {
+			BufferedImage watermarkImage = ImageIO.read(new File(WATERMARK_FILE));
+			for (File f : new File(path).listFiles()) {
+				if (!f.isFile())
+					continue;
+
+				String fileName = f.getName(), name = fileName.substring(0, fileName.indexOf("."));
+				BufferedImage image = ImageIO.read(f);
+
+				Thumbnails.of(image)
+				.imageType(BufferedImage.TYPE_INT_ARGB)
+				.watermark(Positions.TOP_RIGHT, watermarkImage, 0.8f)
+				.scale(1)
+				.outputFormat(FORMAT)
+				.toFile(WATERMARK_OUTPUT + name + SUFFIX);
+
+				log.info("Output: " + WATERMARK_OUTPUT + name + SUFFIX);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	// 不改变比例，调整成方形，周边透明。
