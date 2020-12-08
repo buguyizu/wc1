@@ -1,5 +1,10 @@
-# wc1
-sprider
+### 抓取网页，处理图片，等
+
+#### ImageEdit
+1. 需要处理的图片全部放在./img文件夹下。
+2. 生成的图片全部在./img/output文件夹，或./img/wm文件夹下。
+3. 执行ImageEdit-Square.bat文件调整大小。
+4. 执行ImageEdit-Watermark.bat文件加水印。
 
 ##### WebCollector
 [http://datahref.com/archives/28](http://datahref.com/archives/28)  

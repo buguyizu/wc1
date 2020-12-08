@@ -16,7 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * Hello world!
  *
  */
-public class App2
+public class WcApp1
 {
 	public static void main(String[] args) {
 		// 设置 chrome 的路径

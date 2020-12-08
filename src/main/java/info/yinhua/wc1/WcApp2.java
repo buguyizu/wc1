@@ -19,7 +19,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * Hello world!
  *
  */
-public class App3
+public class WcApp2
 {
 	
 	public static void main(String[] args) {

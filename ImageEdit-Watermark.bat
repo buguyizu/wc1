@@ -1,0 +1,1 @@
+mvn compile exec:java -Dexec.mainClass="info.yinhua.wc1.image.ImageEditBatch" -Dexec.args="2"
